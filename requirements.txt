@@ -1,0 +1,9 @@
+streamlit>=1.30
+pandas>=2.0
+plotly>=5.18
+statsmodels>=0.14
+anthropic>=0.25
+scikit-learn>=1.4
+folium>=0.15
+streamlit-folium>=0.20
+python-dotenv>=1.0

@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+*.bak
+*.docx
+.DS_Store
+skills-lock.json
+.agents/
+.claude/
+2026년 전북 청년 AI빅데이터 경진대회_마음
