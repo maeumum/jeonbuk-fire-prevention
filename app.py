@@ -4,6 +4,7 @@
 실행: streamlit run app.py
 """
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -355,7 +356,7 @@ with st.sidebar:
   <a href="#simulator"   style="display:block;padding:6px 10px;border-radius:6px;color:#333;text-decoration:none;font-size:0.9rem;">정책 시뮬레이터</a>
   <a href="#briefing"    style="display:block;padding:6px 10px;border-radius:6px;color:#333;text-decoration:none;font-size:0.9rem;">AI 예방정책 브리핑</a>
   <p style="font-size:0.7rem;font-weight:700;color:#888;letter-spacing:0.08em;margin:16px 0 4px 0;">결론</p>
-  <a href="#conclusion"  style="display:block;padding:6px 10px;border-radius:6px;color:#d62728;text-decoration:none;font-size:0.9rem;font-weight:600;">예방 전략</a>
+  <a href="#conclusion"  style="display:block;padding:6px 10px;border-radius:6px;color:#333;text-decoration:none;font-size:0.9rem;">예방 전략</a>
 </div>
 """, unsafe_allow_html=True)
 
@@ -400,6 +401,50 @@ st.markdown("""
 """, unsafe_allow_html=True)
 st.title("전북 화재 예방 우선지원 모델")
 st.caption("2026년 제4회 전북 청년 AI·빅데이터 경진대회 | 데이터 출처: 한국전기안전공사, KOSIS 국가데이터처")
+
+components.html("""
+<script>
+(function() {
+  var SECTION_IDS = ['national','trend','risk','correlation','regression','ml','map','simulator','briefing','conclusion'];
+  var ACTIVE_COLOR = '#d62728';
+  var DEFAULT_COLOR = '#333';
+
+  function getDoc() { return window.parent.document; }
+
+  function setActive(activeId) {
+    SECTION_IDS.forEach(function(id) {
+      var link = getDoc().querySelector('a[href="#' + id + '"]');
+      if (!link) return;
+      link.style.color = (id === activeId) ? ACTIVE_COLOR : DEFAULT_COLOR;
+      link.style.fontWeight = (id === activeId) ? '600' : 'normal';
+    });
+  }
+
+  function init() {
+    var doc = getDoc();
+    var sections = SECTION_IDS.map(function(id) {
+      return doc.getElementById(id);
+    }).filter(Boolean);
+
+    if (sections.length === 0) { setTimeout(init, 600); return; }
+
+    if (window.parent._navObserver) window.parent._navObserver.disconnect();
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { root: null, rootMargin: '-10% 0px -65% 0px', threshold: 0 });
+
+    window.parent._navObserver = observer;
+    sections.forEach(function(s) { observer.observe(s); });
+    setActive('national');
+  }
+
+  setTimeout(init, 1200);
+})();
+</script>
+""", height=0, scrolling=False)
 
 # ---------------- 상단 지표 카드 ----------------
 col1, col2, col3, col4 = st.columns(4)
