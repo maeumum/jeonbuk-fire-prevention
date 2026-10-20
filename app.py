@@ -339,7 +339,7 @@ def template_briefing(region, row):
 
 # ---------------- 사이드바 ----------------
 with st.sidebar:
-    st.markdown("## 전북 화재 예방")
+    st.markdown("## 전북 전기화재 예방")
     st.caption("2026 전북 청년 AI·빅데이터 경진대회")
     st.divider()
     st.markdown("""
