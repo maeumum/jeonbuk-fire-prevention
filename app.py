@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 load_dotenv(override=True)
 
 
-st.set_page_config(page_title="전북 화재 예방 우선지원 모델", page_icon="🚒", layout="wide")
+st.set_page_config(page_title="전북 전기화재 예방 우선지원 모델", page_icon="🚒", layout="wide")
 
 # 이 스크립트 파일의 위치를 기준으로 data 폴더를 찾는다.
 # (streamlit을 어느 디렉토리에서 실행하든 항상 정확한 경로를 찾기 위함)
@@ -399,7 +399,7 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
-st.title("전북 화재 예방 우선지원 모델")
+st.title("전북 전기화재 예방 우선지원 모델")
 st.caption("2026년 제4회 전북 청년 AI·빅데이터 경진대회 | 데이터 출처: 한국전기안전공사, KOSIS 국가데이터처")
 
 components.html("""

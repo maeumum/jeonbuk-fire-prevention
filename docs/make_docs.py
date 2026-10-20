@@ -174,7 +174,7 @@ def set_margins(doc, top=2.5, bottom=2.5, left=3.0, right=3.0):
 def make_report():
     doc = Document()
     set_margins(doc)
-    title_page(doc, "최종 결과보고서", "전북 화재 예방 우선지원 모델\n2026년 제4회 전북 청년 AI·빅데이터 경진대회")
+    title_page(doc, "최종 결과보고서", "전북 전기화재 예방 우선지원 모델\n2026년 제4회 전북 청년 AI·빅데이터 경진대회")
 
     heading1(doc, "1. 프로젝트 개요")
     heading2(doc, "1.1 분석 목적")
@@ -298,7 +298,7 @@ def make_report():
 def make_dataset():
     doc = Document()
     set_margins(doc)
-    title_page(doc, "데이터셋 설명서", "전북 화재 예방 우선지원 모델")
+    title_page(doc, "데이터셋 설명서", "전북 전기화재 예방 우선지원 모델")
 
     heading1(doc, "1. 데이터 파일 목록")
     add_table(doc,
@@ -398,7 +398,7 @@ def make_dataset():
 def make_code():
     doc = Document()
     set_margins(doc)
-    title_page(doc, "코드·분석파일 설명서", "전북 화재 예방 우선지원 모델")
+    title_page(doc, "코드·분석파일 설명서", "전북 전기화재 예방 우선지원 모델")
 
     heading1(doc, "1. 프로젝트 디렉토리 구조")
     code_block(doc,
@@ -517,7 +517,7 @@ def make_code():
 def make_env():
     doc = Document()
     set_margins(doc)
-    title_page(doc, "실행환경 설명서", "전북 화재 예방 우선지원 모델")
+    title_page(doc, "실행환경 설명서", "전북 전기화재 예방 우선지원 모델")
 
     heading1(doc, "1. 시스템 요구사항")
     add_table(doc,
@@ -592,7 +592,7 @@ def make_env():
     doc.add_paragraph()
     heading1(doc, "7. 실행 확인 체크리스트")
     bullet(doc, "브라우저에서 http://localhost:8501 접속")
-    bullet(doc, "페이지 타이틀 \"전북 화재 예방 우선지원 모델\" 확인")
+    bullet(doc, "페이지 타이틀 \"전북 전기화재 예방 우선지원 모델\" 확인")
     bullet(doc, "브라우저 탭 아이콘 🚒 확인")
     bullet(doc, "사이드바에 \"전북 화재 예방\" 표시 확인")
     bullet(doc, "전국 비교 섹션 차트 렌더링 확인")
